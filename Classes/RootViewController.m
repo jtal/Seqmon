@@ -97,6 +97,8 @@
     
 	[super viewDidLoad];
 	
+	[self setTitle:@"GC Sequencers"];
+	
 	rooms = [[NSMutableDictionary alloc] init];
 	[self requestEquipmentInfo];
 	
@@ -164,7 +166,7 @@
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
 	NSString *roomNumber = [[rooms allKeys] objectAtIndex:section];
-	return roomNumber;
+	return [[NSString alloc] initWithFormat:@"Room %@",roomNumber];
 }
 
 
@@ -178,7 +180,14 @@
         cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
     }
     
-	// Configure the cell.
+	NSString *roomNumber = [[rooms allKeys] objectAtIndex:[indexPath section]];
+	Room *room = [rooms objectForKey:roomNumber];
+	
+	NSMutableDictionary *instruments = [room Instruments];
+	NSArray *instrumentNames = [instruments allKeys];
+	
+	Instrument *instrument = [instruments objectForKey:[instrumentNames objectAtIndex:[indexPath row]]];
+	[[cell textLabel] setText:[instrument flowCellID]];
 
     return cell;
 }

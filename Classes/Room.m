@@ -15,4 +15,9 @@
 @synthesize Instruments;
 @synthesize roomNumber;
 
+-(NSString *)description {
+	
+	return roomNumber;
+}
+
 @end
