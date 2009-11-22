@@ -1,7 +1,7 @@
 TSequencers
 v7
 r0
-t280565070.001271
+t280577019.023003
 cCheck dependencies
 cProcessInfoPlistFile /Users/jlolofie/src/Sequencers/build/Debug-iphonesimulator/Sequencers.app/Info.plist Sequencers-Info.plist
 cCompileXIB /Users/jlolofie/src/Sequencers/MainWindow.xib
@@ -332,7 +332,7 @@ s909
 
 CCheck dependencies
 r0
-lSLF07#2@18"Check dependencies280565069#280565069#0(0"0(0#1#0"4300885448#0"0#
+lSLF07#2@18"Check dependencies280577018#280577019#0(0"0(0#1#0"4300885448#0"0#
 
 CCompileC build/Sequencers.build/Debug-iphonesimulator/Sequencers.build/Objects-normal/i386/ConnectionDelegate.o /Users/jlolofie/src/Sequencers/Classes/ConnectionDelegate.m normal i386 objective-c com.apple.compilers.gcc.4_2
 r0

@@ -1147,6 +1147,26 @@
 		vrLen = 1385;
 		vrLoc = 2197;
 	};
+	1DB0100510B943FB00729632 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 28C286DF0D94DF7D0034E888 /* RootViewController.h */;
+		name = "RootViewController.h: 20";
+		rLen = 0;
+		rLoc = 434;
+		rType = 0;
+		vrLen = 310;
+		vrLoc = 175;
+	};
+	1DB0100610B943FB00729632 /* PBXTextBookmark */ = {
+		isa = PBXTextBookmark;
+		fRef = 28C286E00D94DF7D0034E888 /* RootViewController.m */;
+		name = "RootViewController.m: 85";
+		rLen = 0;
+		rLoc = 2855;
+		rType = 0;
+		vrLen = 1689;
+		vrLoc = 1638;
+	};
 	1DFEB58B10B7453000739F2D /* Sequencers */ = {
 		isa = PBXExecutable;
 		activeArgIndices = (
@@ -1251,9 +1271,9 @@
 	};
 	28C286E00D94DF7D0034E888 /* RootViewController.m */ = {
 		uiCtxt = {
-			sepNavIntBoundsRect = "{{0, 0}, {780, 3289}}";
-			sepNavSelRange = "{3069, 0}";
-			sepNavVisRange = "{2197, 1385}";
+			sepNavIntBoundsRect = "{{0, 0}, {780, 3354}}";
+			sepNavSelRange = "{2855, 0}";
+			sepNavVisRange = "{1638, 1689}";
 			sepNavWindowFrame = "{{107, 231}, {750, 558}}";
 		};
 	};
@@ -1405,6 +1425,8 @@
 			1DB00FFE10B9102500729632 /* PBXTextBookmark */ = 1DB00FFE10B9102500729632 /* PBXTextBookmark */;
 			1DB0100110B9154E00729632 /* PBXTextBookmark */ = 1DB0100110B9154E00729632 /* PBXTextBookmark */;
 			1DB0100210B9154E00729632 /* PBXTextBookmark */ = 1DB0100210B9154E00729632 /* PBXTextBookmark */;
+			1DB0100510B943FB00729632 /* PBXTextBookmark */ = 1DB0100510B943FB00729632 /* PBXTextBookmark */;
+			1DB0100610B943FB00729632 /* PBXTextBookmark */ = 1DB0100610B943FB00729632 /* PBXTextBookmark */;
 			1DFEB65910B8161C00739F2D = 1DFEB65910B8161C00739F2D /* PBXTextBookmark */;
 			1DFEB65C10B8162200739F2D = 1DFEB65C10B8162200739F2D /* PBXTextBookmark */;
 			1DFEB65D10B8162200739F2D = 1DFEB65D10B8162200739F2D /* PBXTextBookmark */;
