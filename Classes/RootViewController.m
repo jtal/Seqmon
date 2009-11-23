@@ -74,11 +74,13 @@
 			NSDictionary *rawInstrumentData = [[NSDictionary alloc] init];
 			rawInstrumentData = [rawRoomData objectForKey:instrumentName];
 			
+			NSLog(@"dump of data: %@",rawInstrumentData);
+			
 			Instrument *instrument = [[Instrument alloc] init];
 			[instrument setFlowCellID:[rawInstrumentData objectForKey:@"flow_cell"]];
 			[instrument setImagesTaken:[rawInstrumentData objectForKey:@"imaged1"]];
 			[instrument setImagesExpected:[rawInstrumentData objectForKey:@"imaged2"]];
-			[instrument setImagesTransferred:[rawInstrumentData objectForKey:@"transferred"]];
+			[instrument setImagesTransferred:[rawInstrumentData objectForKey:@"tranferred"]];
 			[instrument setEstimatedReadCompletion:[rawInstrumentData objectForKey:@"date"]];
 		
 			[instruments setObject:instrument forKey:instrumentName];
@@ -177,7 +179,7 @@
     
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:CellIdentifier];
     if (cell == nil) {
-        cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:CellIdentifier] autorelease];
+        cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier] autorelease];
     }
     
 	NSString *roomNumber = [[rooms allKeys] objectAtIndex:[indexPath section]];
@@ -188,8 +190,15 @@
 	
 	Instrument *instrument = [instruments objectForKey:[instrumentNames objectAtIndex:[indexPath row]]];
 	[[cell textLabel] setText:[instrument flowCellID]];
+	
+	NSString *detailedText =[[NSString alloc] initWithFormat:@"Imaged: %@/%@ (%@ transferred)",
+							 [instrument imagesTaken], 
+							 [instrument imagesExpected],
+							 [instrument imagesTransferred]
+							 ];
 
-    return cell;
+	[[cell detailTextLabel] setText:detailedText];
+	return cell;
 }
 
 

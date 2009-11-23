@@ -1,7 +1,7 @@
 TSequencers
 v7
 r0
-t280590844.898769
+t280629140.895739
 cCheck dependencies
 cProcessInfoPlistFile /Users/jlolofie/src/Sequencers/build/Debug-iphonesimulator/Sequencers.app/Info.plist Sequencers-Info.plist
 cCompileXIB /Users/jlolofie/src/Sequencers/MainWindow.xib
@@ -187,9 +187,9 @@ t1258845560
 s486
 
 N/Users/jlolofie/src/Sequencers/Classes/RootViewController.m
-c000000004B0942460000000000001E51
-t1258897990
-s7761
+c000000004B09D8120000000000001F8C
+t1258936338
+s8076
 i"RootViewController.h"
 i"JSON.h"
 i"Instrument.h"
@@ -226,11 +226,11 @@ i<Foundation/Foundation.h>
 i<UIKit/UIKit.h>
 
 N/Users/jlolofie/src/Sequencers/build/Debug-iphonesimulator/Sequencers.app
-t1258898044
+t1258936340
 s272
 
 N/Users/jlolofie/src/Sequencers/build/Debug-iphonesimulator/Sequencers.app.dSYM
-t1258898044
+t1258936340
 s102
 
 N/Users/jlolofie/src/Sequencers/build/Debug-iphonesimulator/Sequencers.app/Info.plist
@@ -250,8 +250,8 @@ t1258897283
 s1408
 
 N/Users/jlolofie/src/Sequencers/build/Debug-iphonesimulator/Sequencers.app/Sequencers
-t1258898044
-s55776
+t1258936340
+s59888
 
 N/Users/jlolofie/src/Sequencers/build/Debug-iphonesimulator/Sequencers.app/equipment.json.txt
 t1258897283
@@ -278,8 +278,8 @@ t1258897286
 s7596
 
 N/Users/jlolofie/src/Sequencers/build/Sequencers.build/Debug-iphonesimulator/Sequencers.build/Objects-normal/i386/RootViewController.o
-t1258898044
-s46148
+t1258936340
+s46936
 
 N/Users/jlolofie/src/Sequencers/build/Sequencers.build/Debug-iphonesimulator/Sequencers.build/Objects-normal/i386/SBJSON.o
 t1258897286
@@ -332,7 +332,7 @@ s909
 
 CCheck dependencies
 r0
-lSLF07#2@18"Check dependencies280590844#280590844#0(0"0(0#1#0"4300885448#0"0#
+lSLF07#2@18"Check dependencies280629140#280629140#0(0"0(0#1#0"4300885448#0"0#
 
 CCompileC build/Sequencers.build/Debug-iphonesimulator/Sequencers.build/Objects-normal/i386/ConnectionDelegate.o /Users/jlolofie/src/Sequencers/Classes/ConnectionDelegate.m normal i386 objective-c com.apple.compilers.gcc.4_2
 r0
@@ -390,8 +390,8 @@ xcom.apple.compilers.gcc.4_2
 lSLF07#2@53"Compile /Users/jlolofie/src/Sequencers/Classes/Room.m280590086#280590086#0(0"0(0#0#45"/Users/jlolofie/src/Sequencers/Classes/Room.m4300885448#1839"    cd /Users/jlolofie/src/Sequencers    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -D__IPHONE_OS_VERSION_MIN_REQUIRED=30000 -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator3.1.2.sdk -fvisibility=hidden -mmacosx-version-min=10.5 -gdwarf-2 -iquote /Users/jlolofie/src/Sequencers/build/Sequencers.build/Debug-iphonesimulator/Sequencers.build/Sequencers-generated-files.hmap -I/Users/jlolofie/src/Sequencers/build/Sequencers.build/Debug-iphonesimulator/Sequencers.build/Sequencers-own-target-headers.hmap -I/Users/jlolofie/src/Sequencers/build/Sequencers.build/Debug-iphonesimulator/Sequencers.build/Sequencers-all-target-headers.hmap -iquote /Users/jlolofie/src/Sequencers/build/Sequencers.build/Debug-iphonesimulator/Sequencers.build/Sequencers-project-headers.hmap -F/Users/jlolofie/src/Sequencers/build/Debug-iphonesimulator -I/Users/jlolofie/src/Sequencers/build/Debug-iphonesimulator/include -I/Users/jlolofie/src/Sequencers/build/Sequencers.build/Debug-iphonesimulator/Sequencers.build/DerivedSources/i386 -I/Users/jlolofie/src/Sequencers/build/Sequencers.build/Debug-iphonesimulator/Sequencers.build/DerivedSources -include /var/folders/+Y/+Y5zZoEfGsOZEujf6JpVWE+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/Sequencers_Prefix-bliruqcomiodxqcaddvwfhtmhtqg/Sequencers_Prefix.pch -c /Users/jlolofie/src/Sequencers/Classes/Room.m -o /Users/jlolofie/src/Sequencers/build/Sequencers.build/Debug-iphonesimulator/Sequencers.build/Objects-normal/i386/Room.o0#
 
 CCompileC build/Sequencers.build/Debug-iphonesimulator/Sequencers.build/Objects-normal/i386/RootViewController.o /Users/jlolofie/src/Sequencers/Classes/RootViewController.m normal i386 objective-c com.apple.compilers.gcc.4_2
-s280590844.761211
-e280590844.849839
+s280629140.711955
+e280629140.828661
 r1
 xCompileC
 xbuild/Sequencers.build/Debug-iphonesimulator/Sequencers.build/Objects-normal/i386/RootViewController.o
@@ -400,7 +400,7 @@ xnormal
 xi386
 xobjective-c
 xcom.apple.compilers.gcc.4_2
-lSLF07#2@67"Compile /Users/jlolofie/src/Sequencers/Classes/RootViewController.m280590844#280590844#0(0"0(0#0#59"/Users/jlolofie/src/Sequencers/Classes/RootViewController.m4300885448#1867"    cd /Users/jlolofie/src/Sequencers    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -D__IPHONE_OS_VERSION_MIN_REQUIRED=30000 -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator3.1.2.sdk -fvisibility=hidden -mmacosx-version-min=10.5 -gdwarf-2 -iquote /Users/jlolofie/src/Sequencers/build/Sequencers.build/Debug-iphonesimulator/Sequencers.build/Sequencers-generated-files.hmap -I/Users/jlolofie/src/Sequencers/build/Sequencers.build/Debug-iphonesimulator/Sequencers.build/Sequencers-own-target-headers.hmap -I/Users/jlolofie/src/Sequencers/build/Sequencers.build/Debug-iphonesimulator/Sequencers.build/Sequencers-all-target-headers.hmap -iquote /Users/jlolofie/src/Sequencers/build/Sequencers.build/Debug-iphonesimulator/Sequencers.build/Sequencers-project-headers.hmap -F/Users/jlolofie/src/Sequencers/build/Debug-iphonesimulator -I/Users/jlolofie/src/Sequencers/build/Debug-iphonesimulator/include -I/Users/jlolofie/src/Sequencers/build/Sequencers.build/Debug-iphonesimulator/Sequencers.build/DerivedSources/i386 -I/Users/jlolofie/src/Sequencers/build/Sequencers.build/Debug-iphonesimulator/Sequencers.build/DerivedSources -include /var/folders/+Y/+Y5zZoEfGsOZEujf6JpVWE+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/Sequencers_Prefix-bliruqcomiodxqcaddvwfhtmhtqg/Sequencers_Prefix.pch -c /Users/jlolofie/src/Sequencers/Classes/RootViewController.m -o /Users/jlolofie/src/Sequencers/build/Sequencers.build/Debug-iphonesimulator/Sequencers.build/Objects-normal/i386/RootViewController.o0#
+lSLF07#2@67"Compile /Users/jlolofie/src/Sequencers/Classes/RootViewController.m280629140#280629140#0(0"0(0#0#59"/Users/jlolofie/src/Sequencers/Classes/RootViewController.m4300885448#1867"    cd /Users/jlolofie/src/Sequencers    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -D__IPHONE_OS_VERSION_MIN_REQUIRED=30000 -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator3.1.2.sdk -fvisibility=hidden -mmacosx-version-min=10.5 -gdwarf-2 -iquote /Users/jlolofie/src/Sequencers/build/Sequencers.build/Debug-iphonesimulator/Sequencers.build/Sequencers-generated-files.hmap -I/Users/jlolofie/src/Sequencers/build/Sequencers.build/Debug-iphonesimulator/Sequencers.build/Sequencers-own-target-headers.hmap -I/Users/jlolofie/src/Sequencers/build/Sequencers.build/Debug-iphonesimulator/Sequencers.build/Sequencers-all-target-headers.hmap -iquote /Users/jlolofie/src/Sequencers/build/Sequencers.build/Debug-iphonesimulator/Sequencers.build/Sequencers-project-headers.hmap -F/Users/jlolofie/src/Sequencers/build/Debug-iphonesimulator -I/Users/jlolofie/src/Sequencers/build/Debug-iphonesimulator/include -I/Users/jlolofie/src/Sequencers/build/Sequencers.build/Debug-iphonesimulator/Sequencers.build/DerivedSources/i386 -I/Users/jlolofie/src/Sequencers/build/Sequencers.build/Debug-iphonesimulator/Sequencers.build/DerivedSources -include /var/folders/+Y/+Y5zZoEfGsOZEujf6JpVWE+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/Sequencers_Prefix-bliruqcomiodxqcaddvwfhtmhtqg/Sequencers_Prefix.pch -c /Users/jlolofie/src/Sequencers/Classes/RootViewController.m -o /Users/jlolofie/src/Sequencers/build/Sequencers.build/Debug-iphonesimulator/Sequencers.build/Objects-normal/i386/RootViewController.o0#
 
 CCompileC build/Sequencers.build/Debug-iphonesimulator/Sequencers.build/Objects-normal/i386/SBJSON.o /Users/jlolofie/src/Sequencers/Classes/JSON/SBJSON.m normal i386 objective-c com.apple.compilers.gcc.4_2
 s280590086.299801
@@ -506,23 +506,23 @@ xequipment.json.txt
 lSLF07#2@23"Copy equipment.json.txt280590083#280590083#0(0"0(0#0#49"/Users/jlolofie/src/Sequencers/equipment.json.txt4300885448#441"    cd /Users/jlolofie/src/Sequencers    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Library/PrivateFrameworks/DevToolsCore.framework/Resources/pbxcp -exclude .DS_Store -exclude CVS -exclude .svn -resolve-src-symlinks /Users/jlolofie/src/Sequencers/equipment.json.txt /Users/jlolofie/src/Sequencers/build/Debug-iphonesimulator/Sequencers.app0#
 
 CGenerateDSYMFile /Users/jlolofie/src/Sequencers/build/Debug-iphonesimulator/Sequencers.app.dSYM /Users/jlolofie/src/Sequencers/build/Debug-iphonesimulator/Sequencers.app/Sequencers
-s280590844.876555
-e280590844.894599
+s280629140.856531
+e280629140.892350
 r1
 xGenerateDSYMFile
 x/Users/jlolofie/src/Sequencers/build/Debug-iphonesimulator/Sequencers.app.dSYM
 x/Users/jlolofie/src/Sequencers/build/Debug-iphonesimulator/Sequencers.app/Sequencers
-lSLF07#2@118"GenerateDSYMFile build/Debug-iphonesimulator/Sequencers.app.dSYM build/Debug-iphonesimulator/Sequencers.app/Sequencers280590844#280590844#0(0"0(0#0#84"/Users/jlolofie/src/Sequencers/build/Debug-iphonesimulator/Sequencers.app/Sequencers4300885448#368"    cd /Users/jlolofie/src/Sequencers    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/usr/bin/dsymutil /Users/jlolofie/src/Sequencers/build/Debug-iphonesimulator/Sequencers.app/Sequencers -o /Users/jlolofie/src/Sequencers/build/Debug-iphonesimulator/Sequencers.app.dSYM0#
+lSLF07#2@118"GenerateDSYMFile build/Debug-iphonesimulator/Sequencers.app.dSYM build/Debug-iphonesimulator/Sequencers.app/Sequencers280629140#280629140#0(0"0(0#0#84"/Users/jlolofie/src/Sequencers/build/Debug-iphonesimulator/Sequencers.app/Sequencers4300885448#368"    cd /Users/jlolofie/src/Sequencers    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/usr/bin/dsymutil /Users/jlolofie/src/Sequencers/build/Debug-iphonesimulator/Sequencers.app/Sequencers -o /Users/jlolofie/src/Sequencers/build/Debug-iphonesimulator/Sequencers.app.dSYM0#
 
 CLd /Users/jlolofie/src/Sequencers/build/Debug-iphonesimulator/Sequencers.app/Sequencers normal i386
-s280590844.849931
-e280590844.876454
+s280629140.828752
+e280629140.856436
 r1
 xLd
 x/Users/jlolofie/src/Sequencers/build/Debug-iphonesimulator/Sequencers.app/Sequencers
 xnormal
 xi386
-lSLF07#2@89"Link /Users/jlolofie/src/Sequencers/build/Debug-iphonesimulator/Sequencers.app/Sequencers280590844#280590844#0(0"0(0#0#0"4300885448#839"    cd /Users/jlolofie/src/Sequencers    setenv MACOSX_DEPLOYMENT_TARGET 10.5    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -arch i386 -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator3.1.2.sdk -L/Users/jlolofie/src/Sequencers/build/Debug-iphonesimulator -F/Users/jlolofie/src/Sequencers/build/Debug-iphonesimulator -filelist /Users/jlolofie/src/Sequencers/build/Sequencers.build/Debug-iphonesimulator/Sequencers.build/Objects-normal/i386/Sequencers.LinkFileList -mmacosx-version-min=10.5 -framework Foundation -framework UIKit -framework CoreGraphics -o /Users/jlolofie/src/Sequencers/build/Debug-iphonesimulator/Sequencers.app/Sequencers0#
+lSLF07#2@89"Link /Users/jlolofie/src/Sequencers/build/Debug-iphonesimulator/Sequencers.app/Sequencers280629140#280629140#0(0"0(0#0#0"4300885448#839"    cd /Users/jlolofie/src/Sequencers    setenv MACOSX_DEPLOYMENT_TARGET 10.5    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -arch i386 -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator3.1.2.sdk -L/Users/jlolofie/src/Sequencers/build/Debug-iphonesimulator -F/Users/jlolofie/src/Sequencers/build/Debug-iphonesimulator -filelist /Users/jlolofie/src/Sequencers/build/Sequencers.build/Debug-iphonesimulator/Sequencers.build/Objects-normal/i386/Sequencers.LinkFileList -mmacosx-version-min=10.5 -framework Foundation -framework UIKit -framework CoreGraphics -o /Users/jlolofie/src/Sequencers/build/Debug-iphonesimulator/Sequencers.app/Sequencers0#
 
 CProcessInfoPlistFile /Users/jlolofie/src/Sequencers/build/Debug-iphonesimulator/Sequencers.app/Info.plist Sequencers-Info.plist
 s280590083.058171
@@ -547,10 +547,10 @@ xcom.apple.compilers.gcc.4_2
 lSLF07#2@32"Precompile Sequencers_Prefix.pch280590083#280590086#0(0"0(0#0#52"/Users/jlolofie/src/Sequencers/Sequencers_Prefix.pch4300885448#1728"    cd /Users/jlolofie/src/Sequencers    setenv LANG en_US.US-ASCII    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin/gcc-4.2 -x objective-c-header -arch i386 -fmessage-length=0 -pipe -std=c99 -Wno-trigraphs -fpascal-strings -fasm-blocks -O0 -Wreturn-type -Wunused-variable -D__IPHONE_OS_VERSION_MIN_REQUIRED=30000 -isysroot /Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator3.1.2.sdk -fvisibility=hidden -mmacosx-version-min=10.5 -gdwarf-2 -iquote /Users/jlolofie/src/Sequencers/build/Sequencers.build/Debug-iphonesimulator/Sequencers.build/Sequencers-generated-files.hmap -I/Users/jlolofie/src/Sequencers/build/Sequencers.build/Debug-iphonesimulator/Sequencers.build/Sequencers-own-target-headers.hmap -I/Users/jlolofie/src/Sequencers/build/Sequencers.build/Debug-iphonesimulator/Sequencers.build/Sequencers-all-target-headers.hmap -iquote /Users/jlolofie/src/Sequencers/build/Sequencers.build/Debug-iphonesimulator/Sequencers.build/Sequencers-project-headers.hmap -F/Users/jlolofie/src/Sequencers/build/Debug-iphonesimulator -I/Users/jlolofie/src/Sequencers/build/Debug-iphonesimulator/include -I/Users/jlolofie/src/Sequencers/build/Sequencers.build/Debug-iphonesimulator/Sequencers.build/DerivedSources/i386 -I/Users/jlolofie/src/Sequencers/build/Sequencers.build/Debug-iphonesimulator/Sequencers.build/DerivedSources -c /Users/jlolofie/src/Sequencers/Sequencers_Prefix.pch -o /var/folders/+Y/+Y5zZoEfGsOZEujf6JpVWE+++TI/-Caches-/com.apple.Xcode.501/SharedPrecompiledHeaders/Sequencers_Prefix-bliruqcomiodxqcaddvwfhtmhtqg/Sequencers_Prefix.pch.gch0#
 
 CTouch /Users/jlolofie/src/Sequencers/build/Debug-iphonesimulator/Sequencers.app
-s280590844.894680
-e280590844.898729
+s280629140.892436
+e280629140.895689
 r1
 xTouch
 x/Users/jlolofie/src/Sequencers/build/Debug-iphonesimulator/Sequencers.app
-lSLF07#2@79"Touch /Users/jlolofie/src/Sequencers/build/Debug-iphonesimulator/Sequencers.app280590844#280590844#0(0"0(0#0#0"4300885448#265"    cd /Users/jlolofie/src/Sequencers    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /usr/bin/touch -c /Users/jlolofie/src/Sequencers/build/Debug-iphonesimulator/Sequencers.app0#
+lSLF07#2@79"Touch /Users/jlolofie/src/Sequencers/build/Debug-iphonesimulator/Sequencers.app280629140#280629140#0(0"0(0#0#0"4300885448#265"    cd /Users/jlolofie/src/Sequencers    setenv PATH "/Developer/Platforms/iPhoneSimulator.platform/Developer/usr/bin:/Developer/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin"    /usr/bin/touch -c /Users/jlolofie/src/Sequencers/build/Debug-iphonesimulator/Sequencers.app0#
 
