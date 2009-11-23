@@ -24,6 +24,9 @@
 		28AD73600D9D9599002E5188 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28AD735F0D9D9599002E5188 /* MainWindow.xib */; };
 		28C286E10D94DF7D0034E888 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28C286E00D94DF7D0034E888 /* RootViewController.m */; };
 		28F335F11007B36200424DE2 /* RootViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28F335F01007B36200424DE2 /* RootViewController.xib */; };
+		A2551F8210BAEE10009AC4B4 /* default.png in Resources */ = {isa = PBXBuildFile; fileRef = A2551F8110BAEE10009AC4B4 /* default.png */; };
+		A2551FAA10BAF19B009AC4B4 /* SequencerDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A2551FA810BAF19B009AC4B4 /* SequencerDetailViewController.m */; };
+		A2551FAB10BAF19B009AC4B4 /* SequencerDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A2551FA910BAF19B009AC4B4 /* SequencerDetailViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -58,6 +61,10 @@
 		28F335F01007B36200424DE2 /* RootViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RootViewController.xib; sourceTree = "<group>"; };
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* Sequencers-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Sequencers-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
+		A2551F8110BAEE10009AC4B4 /* default.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = default.png; sourceTree = "<group>"; };
+		A2551FA710BAF19B009AC4B4 /* SequencerDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SequencerDetailViewController.h; sourceTree = "<group>"; };
+		A2551FA810BAF19B009AC4B4 /* SequencerDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SequencerDetailViewController.m; sourceTree = "<group>"; };
+		A2551FA910BAF19B009AC4B4 /* SequencerDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SequencerDetailViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +93,9 @@
 				1DB00F3310B8803C00729632 /* Room.m */,
 				1DB00F3510B8805600729632 /* Instrument.h */,
 				1DB00F3610B8805600729632 /* Instrument.m */,
+				A2551FA710BAF19B009AC4B4 /* SequencerDetailViewController.h */,
+				A2551FA810BAF19B009AC4B4 /* SequencerDetailViewController.m */,
+				A2551FA910BAF19B009AC4B4 /* SequencerDetailViewController.xib */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -142,6 +152,7 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				A2551F8110BAEE10009AC4B4 /* default.png */,
 				28F335F01007B36200424DE2 /* RootViewController.xib */,
 				28AD735F0D9D9599002E5188 /* MainWindow.xib */,
 				8D1107310486CEB800E47090 /* Sequencers-Info.plist */,
@@ -212,6 +223,8 @@
 				28AD73600D9D9599002E5188 /* MainWindow.xib in Resources */,
 				28F335F11007B36200424DE2 /* RootViewController.xib in Resources */,
 				1DB00F2210B84F0C00729632 /* equipment.json.txt in Resources */,
+				A2551F8210BAEE10009AC4B4 /* default.png in Resources */,
+				A2551FAB10BAF19B009AC4B4 /* SequencerDetailViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -233,6 +246,7 @@
 				1DFEB5B510B745C000739F2D /* SBJsonWriter.m in Sources */,
 				1DB00F3410B8803C00729632 /* Room.m in Sources */,
 				1DB00F3710B8805600729632 /* Instrument.m in Sources */,
+				A2551FAA10BAF19B009AC4B4 /* SequencerDetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

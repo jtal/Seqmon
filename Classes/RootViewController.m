@@ -10,6 +10,7 @@
 #import "JSON.h"
 #import "Instrument.h"
 #import "Room.h"
+#import "SequencerDetailViewController.h"
 
 
 @implementation RootViewController
@@ -76,13 +77,18 @@
 			
 			NSLog(@"dump of data: %@",rawInstrumentData);
 			
+			NSNumberFormatter* numForm = [[[NSNumberFormatter alloc] init] autorelease];
+			[numForm setFormatterBehavior:NSNumberFormatterBehavior10_4];
+			
+						
 			Instrument *instrument = [[Instrument alloc] init];
 			[instrument setFlowCellID:[rawInstrumentData objectForKey:@"flow_cell"]];
 			[instrument setImagesTaken:[rawInstrumentData objectForKey:@"imaged1"]];
 			[instrument setImagesExpected:[rawInstrumentData objectForKey:@"imaged2"]];
 			[instrument setImagesTransferred:[rawInstrumentData objectForKey:@"tranferred"]];
 			[instrument setEstimatedReadCompletion:[rawInstrumentData objectForKey:@"date"]];
-		
+			[instrument setInstrumentName:instrumentName];
+			
 			[instruments setObject:instrument forKey:instrumentName];
 		}
 		
@@ -151,6 +157,17 @@
 	// e.g. self.myOutlet = nil;
 }
 
+- (Instrument*)instrumentForIndexPath:(NSIndexPath *)indexPath {
+	NSString *roomNumber = [[rooms allKeys] objectAtIndex:[indexPath section]];
+	Room *room = [rooms objectForKey:roomNumber];
+	
+	NSMutableDictionary *instruments = [room Instruments];
+	NSArray *instrumentNames = [instruments allKeys];
+	
+	Instrument *instrument = [instruments objectForKey:[instrumentNames objectAtIndex:[indexPath row]]];
+	
+	return instrument;
+}
 
 #pragma mark Table view methods
 
@@ -181,14 +198,8 @@
     if (cell == nil) {
         cell = [[[UITableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle reuseIdentifier:CellIdentifier] autorelease];
     }
-    
-	NSString *roomNumber = [[rooms allKeys] objectAtIndex:[indexPath section]];
-	Room *room = [rooms objectForKey:roomNumber];
-	
-	NSMutableDictionary *instruments = [room Instruments];
-	NSArray *instrumentNames = [instruments allKeys];
-	
-	Instrument *instrument = [instruments objectForKey:[instrumentNames objectAtIndex:[indexPath row]]];
+    	
+	Instrument *instrument = [self instrumentForIndexPath:indexPath];
 	[[cell textLabel] setText:[instrument flowCellID]];
 	
 	NSString *detailedText =[[NSString alloc] initWithFormat:@"Imaged: %@/%@ (%@ transferred)",
@@ -203,16 +214,23 @@
 
 
 
-/*
+
 // Override to support row selection in the table view.
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
 
     // Navigation logic may go here -- for example, create and push another view controller.
+ 
+	Instrument *instrument = [self instrumentForIndexPath:indexPath];
+	
+	SequencerDetailViewController *svdc = [[SequencerDetailViewController alloc] initWithInstrument:instrument];
+	[self.navigationController pushViewController:svdc animated:YES];
+	[svdc release];
+ 
 	// AnotherViewController *anotherViewController = [[AnotherViewController alloc] initWithNibName:@"AnotherView" bundle:nil];
 	// [self.navigationController pushViewController:anotherViewController animated:YES];
 	// [anotherViewController release];
 }
-*/
+
 
 
 /*
