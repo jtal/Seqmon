@@ -40,7 +40,8 @@
 	NSString *responseString = [[NSString alloc] initWithData:responseData encoding:NSUTF8StringEncoding];
 	NSLog(@"received data");
 	
-	[self parseJSONValue:[responseString JSONValue]];
+	[self processJSONResponse:responseString];
+	
 	[equipmentTable reloadData];
 }
 
@@ -53,51 +54,16 @@
 	NSLog(@"closing connection");
 }
 
--(void)parseJSONValue:(NSDictionary *)json {
+-(void)processJSONResponse:(NSString *)json {
+	roomList = [Room roomListForJSON:json];
 	
-	NSEnumerator *roomEnum = [json keyEnumerator];
-	NSString *roomNumber = [[NSString alloc] init];
+	NSEnumerator* enumerator = [roomList objectEnumerator];
 	
-	while((roomNumber = [roomEnum nextObject])) {
-		
-		Room *room = [[Room alloc] init];
-		[room setRoomNumber:roomNumber];
-
-		NSDictionary *rawRoomData = [json objectForKey:roomNumber];
-		NSEnumerator *instrumentEnum = [rawRoomData keyEnumerator];
-
-		// store instruments temporarily until putting it in the room object
-		NSMutableDictionary *instruments = [[NSMutableDictionary alloc] init];
-
-		NSString *instrumentName = [[NSString alloc] init];
-		while((instrumentName = [instrumentEnum nextObject])) {
-			
-			NSDictionary *rawInstrumentData = [[NSDictionary alloc] init];
-			rawInstrumentData = [rawRoomData objectForKey:instrumentName];
-			
-			NSLog(@"dump of data: %@",rawInstrumentData);
-			
-			NSNumberFormatter* numForm = [[[NSNumberFormatter alloc] init] autorelease];
-			[numForm setFormatterBehavior:NSNumberFormatterBehavior10_4];
-			
-						
-			Instrument *instrument = [[Instrument alloc] init];
-			[instrument setFlowCellID:[rawInstrumentData objectForKey:@"flow_cell"]];
-			[instrument setImagesTaken:[rawInstrumentData objectForKey:@"imaged1"]];
-			[instrument setImagesExpected:[rawInstrumentData objectForKey:@"imaged2"]];
-			[instrument setImagesTransferred:[rawInstrumentData objectForKey:@"tranferred"]];
-			[instrument setEstimatedReadCompletion:[rawInstrumentData objectForKey:@"date"]];
-			[instrument setInstrumentName:instrumentName];
-			
-			[instruments setObject:instrument forKey:instrumentName];
-		}
-		
-		[room setInstruments:instruments];
-		NSLog(@"parsed room: %@",room);
-		[rooms setObject:room forKey:roomNumber];
+	Room * room;
+	while((room = [enumerator nextObject])) {
+		[rooms setObject:room forKey:room.roomNumber];
 	}
-
-	NSLog(@"parsed equipment data");
+	
 }
 
 
@@ -158,15 +124,8 @@
 }
 
 - (Instrument*)instrumentForIndexPath:(NSIndexPath *)indexPath {
-	NSString *roomNumber = [[rooms allKeys] objectAtIndex:[indexPath section]];
-	Room *room = [rooms objectForKey:roomNumber];
-	
-	NSMutableDictionary *instruments = [room Instruments];
-	NSArray *instrumentNames = [instruments allKeys];
-	
-	Instrument *instrument = [instruments objectForKey:[instrumentNames objectAtIndex:[indexPath row]]];
-	
-	return instrument;
+	Room* ourRoom = [roomList objectAtIndex:[indexPath section]];
+	return [ourRoom.instrumentList objectAtIndex:[indexPath row]];
 }
 
 #pragma mark Table view methods
@@ -178,14 +137,11 @@
 
 // Customize the number of rows in the table view.
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-	NSString *roomNumber = [[rooms allKeys] objectAtIndex:section];
-    Room *room = [rooms objectForKey:roomNumber];
-	return [[room Instruments] count];
+	return [[[roomList objectAtIndex:section] instrumentList] count];
 }
 
 - (NSString *)tableView:(UITableView *)tableView titleForHeaderInSection:(NSInteger)section {
-	NSString *roomNumber = [[rooms allKeys] objectAtIndex:section];
-	return [[NSString alloc] initWithFormat:@"Room %@",roomNumber];
+	return [[roomList objectAtIndex:section] roomNumber];
 }
 
 
@@ -211,8 +167,6 @@
 	[[cell detailTextLabel] setText:detailedText];
 	return cell;
 }
-
-
 
 
 // Override to support row selection in the table view.

@@ -20,7 +20,7 @@
 @property (nonatomic, retain) IBOutlet UITableView *equipmentTable;
 
 -(void)requestEquipmentInfo;
--(void)parseJSONValue:(NSDictionary *)json;
+-(void)processJSONResponse:(NSString *)json;
 -(Instrument *)instrumentForIndexPath:(NSIndexPath*) indexPath;
 
 @end

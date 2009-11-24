@@ -26,5 +26,6 @@
 @property (nonatomic, retain) NSNumber *imagesExpected;
 @property (nonatomic, retain) NSNumber *imagesTransferred;
 
++(Instrument*)initFromRawData:(NSDictionary*)rawInstrumentData withName:(NSString*)instrName;
 
 @end

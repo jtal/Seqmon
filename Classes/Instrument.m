@@ -18,4 +18,21 @@
 @synthesize imagesExpected;
 @synthesize imagesTransferred;
 
++(Instrument*) initFromRawData:(NSDictionary*)rawInstrumentData withName:(NSString*)instrName {
+	Instrument *instrument = [[Instrument alloc] init];
+	[instrument setFlowCellID:[rawInstrumentData objectForKey:@"flow_cell"]];
+	[instrument setImagesTaken:[rawInstrumentData objectForKey:@"imaged1"]];
+	[instrument setImagesExpected:[rawInstrumentData objectForKey:@"imaged2"]];
+	[instrument setImagesTransferred:[rawInstrumentData objectForKey:@"tranferred"]];
+	[instrument setEstimatedReadCompletion:[rawInstrumentData objectForKey:@"date"]];
+	[instrument setInstrumentName:instrName];
+	
+	return instrument;
+}
+
+
+-(NSString*) description {
+	return [[NSString alloc] initWithFormat:@"Instrument %@", instrumentName];
+}
+
 @end
