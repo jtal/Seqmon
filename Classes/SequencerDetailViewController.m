@@ -45,8 +45,7 @@
 	[cycleProgress setText:progressText];
 	[cycleProgressBar setProgress:progress];
 	
-	// TODO: convert to string
-	[expectedCompletionDate setText:instrument.estimatedReadCompletion];
+	[expectedCompletionDate setText:[[instrument estimatedReadCompletion] description]];
 }
 
 
@@ -73,7 +72,7 @@
 -(IBAction)triggerMessage:(id) sender {
 	UIAlertView *someError = [[UIAlertView alloc] initWithTitle: @"Foo" message: @"Fooo" delegate: self cancelButtonTitle: @"Ok" otherButtonTitles: nil];
 	[someError show];
-	[someError release];
+	[someError release];	
 }
 
 
