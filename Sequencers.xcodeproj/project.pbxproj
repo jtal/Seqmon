@@ -27,6 +27,7 @@
 		A2551F8210BAEE10009AC4B4 /* default.png in Resources */ = {isa = PBXBuildFile; fileRef = A2551F8110BAEE10009AC4B4 /* default.png */; };
 		A2551FAA10BAF19B009AC4B4 /* SequencerDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A2551FA810BAF19B009AC4B4 /* SequencerDetailViewController.m */; };
 		A2551FAB10BAF19B009AC4B4 /* SequencerDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A2551FA910BAF19B009AC4B4 /* SequencerDetailViewController.xib */; };
+		A274CB4D10BC469E00D23D0E /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = A274CB4C10BC469E00D23D0E /* Icon.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -65,6 +66,7 @@
 		A2551FA710BAF19B009AC4B4 /* SequencerDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SequencerDetailViewController.h; sourceTree = "<group>"; };
 		A2551FA810BAF19B009AC4B4 /* SequencerDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SequencerDetailViewController.m; sourceTree = "<group>"; };
 		A2551FA910BAF19B009AC4B4 /* SequencerDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = SequencerDetailViewController.xib; path = Classes/SequencerDetailViewController.xib; sourceTree = "<group>"; };
+		A274CB4C10BC469E00D23D0E /* Icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Icon.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -151,6 +153,7 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				A274CB4C10BC469E00D23D0E /* Icon.png */,
 				A2551FA910BAF19B009AC4B4 /* SequencerDetailViewController.xib */,
 				A2551F8110BAEE10009AC4B4 /* default.png */,
 				28F335F01007B36200424DE2 /* RootViewController.xib */,
@@ -225,6 +228,7 @@
 				1DB00F2210B84F0C00729632 /* equipment.json.txt in Resources */,
 				A2551F8210BAEE10009AC4B4 /* default.png in Resources */,
 				A2551FAB10BAF19B009AC4B4 /* SequencerDetailViewController.xib in Resources */,
+				A274CB4D10BC469E00D23D0E /* Icon.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
