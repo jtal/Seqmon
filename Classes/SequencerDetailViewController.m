@@ -38,13 +38,14 @@
 	
 	[flowCellID setText:instrument.flowCellID];
 	
-	[sequencerNumber setText:instrument.instrumentName];
 	float progress = [instrument.imagesTaken floatValue] / [instrument.imagesExpected floatValue];
 	
 	NSString *progressText = [[[NSString alloc] initWithFormat:@"%@/%@", instrument.imagesTaken, instrument.imagesExpected] autorelease];
 		
 	[cycleProgress setText:progressText];
 	[cycleProgressBar setProgress:progress];
+	
+	// TODO: convert to string
 	[expectedCompletionDate setText:instrument.estimatedReadCompletion];
 }
 

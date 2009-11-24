@@ -12,7 +12,6 @@
 
 @interface SequencerDetailViewController : UIViewController {
 	
-	IBOutlet UILabel *sequencerNumber;
 	IBOutlet UILabel *cycleProgress;
 	IBOutlet UIProgressView *cycleProgressBar;
 	IBOutlet UILabel *expectedCompletionDate;

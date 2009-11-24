@@ -105,7 +105,7 @@
     
 	[super viewDidLoad];
 	
-	[self setTitle:@"GC Sequencers"];
+	[self setTitle:@"Sequencers"];
 	
 	rooms = [[NSMutableDictionary alloc] init];
 	[self requestEquipmentInfo];
@@ -224,6 +224,7 @@
 	
 	SequencerDetailViewController *svdc = [[SequencerDetailViewController alloc] initWithInstrument:instrument];
 	[self.navigationController pushViewController:svdc animated:YES];
+	[svdc setTitle:[instrument instrumentName]];
 	[svdc release];
  
 	// AnotherViewController *anotherViewController = [[AnotherViewController alloc] initWithNibName:@"AnotherView" bundle:nil];
