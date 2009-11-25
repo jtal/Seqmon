@@ -8,6 +8,8 @@
 
 #import "SequencersAppDelegate.h"
 #import "RootViewController.h"
+#import "PushHelper.h"
+#import "ObjectiveResourceConfig.h"
 
 
 @implementation SequencersAppDelegate
@@ -21,7 +23,11 @@
 
 - (void)applicationDidFinishLaunching:(UIApplication *)application {    
     
-    // Override point for customization after app launch    
+    // Override point for customization after app launch   
+	
+	[ObjectiveResourceConfig setSite:@"http://192.168.2.122:3000/"];
+	
+	 [[UIApplication sharedApplication] registerForRemoteNotificationTypes:(UIRemoteNotificationTypeBadge | UIRemoteNotificationTypeAlert)];
 	
 	[window addSubview:[navigationController view]];
     [window makeKeyAndVisible];
@@ -42,6 +48,22 @@
 	[super dealloc];
 }
 
+#pragma mark -
+#pragma mark Push Notifications
+// Delegation methods
+- (void)application:(UIApplication *)app didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)devToken {
+    //const void *devTokenBytes = [devToken bytes];
+    //self.registered = YES;
+	
+	PushHelper * helper = [[PushHelper alloc] initWithTokenData:devToken];
+	[helper registerDevice];
+	
+	//NSLog(@"Our token: %@", devToken);
+}
+
+- (void)application:(UIApplication *)app didFailToRegisterForRemoteNotificationsWithError:(NSError *)err {
+    NSLog(@"Error in registration. Error: %@", err);
+}
 
 @end
 

@@ -1,5 +1,6 @@
 # xcode noise
 build/*
+rails_project/SharkSandwich/log/*
 *.pbxuser
 *.mode1v3
 
