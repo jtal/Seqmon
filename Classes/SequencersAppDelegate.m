@@ -25,9 +25,13 @@
     
     // Override point for customization after app launch   
 	
-	[ObjectiveResourceConfig setSite:@"http://192.168.2.122:3000/"];
 	
-	 [[UIApplication sharedApplication] registerForRemoteNotificationTypes:(UIRemoteNotificationTypeBadge | UIRemoteNotificationTypeAlert)];
+	NSString *pushServer = [[NSString alloc] initWithString: @"http://gcseq-app.gen-comp.com:80"];
+	[ObjectiveResourceConfig setSite:pushServer];
+	NSLog(@"connecting to push server: %s",pushServer);
+	[pushServer release];
+	
+	[[UIApplication sharedApplication] registerForRemoteNotificationTypes:(UIRemoteNotificationTypeBadge | UIRemoteNotificationTypeAlert)];
 	
 	[window addSubview:[navigationController view]];
     [window makeKeyAndVisible];
