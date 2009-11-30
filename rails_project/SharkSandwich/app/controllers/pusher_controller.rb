@@ -1,8 +1,9 @@
 class PusherController < ApplicationController
-    def demo
-        dev = Device.find(:first)
+   def demo
+        devs = Device.find(:all);
 
-        dev.send_notification :alert => "HELLOOOOOOO!"
-
+	devs.each do |dev|
+	        dev.send_notification :alert => "I like ponies!", :badge=>10
+	end
     end
 end
