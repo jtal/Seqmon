@@ -189,7 +189,7 @@
 					<object class="IBUILabel" id="399090688">
 						<reference key="NSNextResponder" ref="191373211"/>
 						<int key="NSvFlags">292</int>
-						<string key="NSFrame">{{24, 257}, {42, 21}}</string>
+						<string key="NSFrame">{{20, 257}, {42, 21}}</string>
 						<reference key="NSSuperview" ref="191373211"/>
 						<bool key="IBUIOpaque">NO</bool>
 						<bool key="IBUIClipsSubviews">YES</bool>
@@ -302,6 +302,15 @@
 					</object>
 					<int key="connectionID">24</int>
 				</object>
+				<object class="IBConnectionRecord">
+					<object class="IBCocoaTouchEventConnection" key="connection">
+						<string key="label">samplesButtonClicked:</string>
+						<reference key="source" ref="291825877"/>
+						<reference key="destination" ref="372490531"/>
+						<int key="IBEventType">7</int>
+					</object>
+					<int key="connectionID">31</int>
+				</object>
 			</object>
 			<object class="IBMutableOrderedSet" key="objectRecords">
 				<object class="NSArray" key="orderedObjects">
@@ -325,11 +334,11 @@
 							<reference ref="264207479"/>
 							<reference ref="887842072"/>
 							<reference ref="563302072"/>
-							<reference ref="399090688"/>
 							<reference ref="733517280"/>
 							<reference ref="737993497"/>
 							<reference ref="286333712"/>
 							<reference ref="291825877"/>
+							<reference ref="399090688"/>
 						</object>
 						<reference key="parent" ref="0"/>
 					</object>
@@ -437,7 +446,7 @@
 					<bool key="EncodedWithXMLCoder">YES</bool>
 					<string>SequencerDetailViewController</string>
 					<string>UIResponder</string>
-					<string>{{854, 265}, {320, 480}}</string>
+					<string>{{605, 265}, {320, 480}}</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
 					<string>com.apple.InterfaceBuilder.IBCocoaTouchPlugin</string>
@@ -470,7 +479,7 @@
 				</object>
 			</object>
 			<nil key="sourceID"/>
-			<int key="maxID">30</int>
+			<int key="maxID">31</int>
 		</object>
 		<object class="IBClassDescriber" key="IBDocument.Classes">
 			<object class="NSMutableArray" key="referencedPartialClassDescriptions">
@@ -493,8 +502,17 @@
 					<string key="className">SequencerDetailViewController</string>
 					<string key="superclassName">UIViewController</string>
 					<object class="NSMutableDictionary" key="actions">
-						<string key="NS.key.0">triggerMessage:</string>
-						<string key="NS.object.0">id</string>
+						<bool key="EncodedWithXMLCoder">YES</bool>
+						<object class="NSArray" key="dict.sortedKeys">
+							<bool key="EncodedWithXMLCoder">YES</bool>
+							<string>samplesButtonClicked:</string>
+							<string>triggerMessage:</string>
+						</object>
+						<object class="NSMutableArray" key="dict.values">
+							<bool key="EncodedWithXMLCoder">YES</bool>
+							<string>id</string>
+							<string>id</string>
+						</object>
 					</object>
 					<object class="NSMutableDictionary" key="outlets">
 						<bool key="EncodedWithXMLCoder">YES</bool>

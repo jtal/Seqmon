@@ -24,5 +24,6 @@
 
 -(id)initWithInstrument:(Instrument *)instrument;
 -(IBAction)triggerMessage:(id)sender;
+-(IBAction)samplesButtonClicked:(id)sender;
 
 @end

@@ -156,15 +156,16 @@
     }
     	
 	Instrument *instrument = [self instrumentForIndexPath:indexPath];
-	[[cell textLabel] setText:[instrument flowCellID]];
+	[[cell textLabel] setText:[instrument instrumentName]];
 	
-	NSString *detailedText =[[NSString alloc] initWithFormat:@"Imaged: %@/%@ (%@ transferred)",
+	NSString *detailedText =[[NSString alloc] initWithFormat:@"Cycle %@/%@ (%@ transferred)",
 							 [instrument imagesTaken], 
 							 [instrument imagesExpected],
 							 [instrument imagesTransferred]
 							 ];
 
 	[[cell detailTextLabel] setText:detailedText];
+	[detailedText release];
 	return cell;
 }
 

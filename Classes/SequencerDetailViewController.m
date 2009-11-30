@@ -20,6 +20,24 @@
 	return self;
 }
 
+-(IBAction)triggerMessage:(id) sender {
+	UIAlertView *someError = [[UIAlertView alloc] initWithTitle: @"Foo" message: @"Fooo" delegate: self cancelButtonTitle: @"Ok" otherButtonTitles: nil];
+	[someError show];
+	[someError release];	
+}
+
+-(IBAction)samplesButtonClicked:(id)sender {
+
+	// TODO: use label instead of string
+	UIAlertView *alert =[[UIAlertView alloc] initWithTitle:@"Samples"
+												   message:@"stuff"
+												  delegate:self
+										 cancelButtonTitle:@"Cancel"
+										   otherButtonTitles:@"Ok"];
+	[alert show];
+	[alert release];
+}
+
 
 /*
  // The designated initializer.  Override if you create the controller programmatically and want to perform customization that is not appropriate for viewDidLoad.
@@ -68,13 +86,6 @@
 	// Release any retained subviews of the main view.
 	// e.g. self.myOutlet = nil;
 }
-
--(IBAction)triggerMessage:(id) sender {
-	UIAlertView *someError = [[UIAlertView alloc] initWithTitle: @"Foo" message: @"Fooo" delegate: self cancelButtonTitle: @"Ok" otherButtonTitles: nil];
-	[someError show];
-	[someError release];	
-}
-
 
 - (void)dealloc {
     [super dealloc];
