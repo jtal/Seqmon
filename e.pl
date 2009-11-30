@@ -33,22 +33,23 @@ sub get_equipment_info {
 
         next if $room eq 'unknown';
         my $machines = $model->machines_in_room($room);
-        my $machine_summary = {};
+        my $machine_summaries = {};
 
         for my $machine (@$machines) {
 
             my $run        = $machine->get_last_solexa_run();
             my $last_event = $run->get_last_event();
 
-            if ($run->er_id == 2438) {
-                $DB::single = 1;
-            }
+            my $machine_name = $machine->serial_number();
+            $machine_name =~ s/HW(.+)-//;
 
             my $stats      = $model->get_seq_stats( $run->er_id );
+            my $machine_summary = {};
 
             if ($stats) {
                 $machine_summary = {
                     flow_cell            => $run->flow_cell_id(),
+                    machine_name         => $machine_name,
                     cycles_done          => $stats->{'last_instrument_cycle'},
                     cycles_estimated     => $stats->{'total_cycles'},
                     transferred          => $stats->{'last_transfer_cycle'},
@@ -57,15 +58,18 @@ sub get_equipment_info {
             } else {
                 $machine_summary = {
                     flow_cell            => $run->flow_cell_id(),
+                    machine_name         => $machine_name,
                     cycles_done          => 0,
                     cycles_estimated     => 'uknown',
                     transferred          => 0,
                     estimated_completion => undef,
                 };
             }
+
+            $machine_summaries->{$machine_name} = $machine_summary;
         }
 
-        $e->{$room} = $machine_summary;
+        $e->{$room} = $machine_summaries;
     }
 
     return $e;

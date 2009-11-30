@@ -22,7 +22,7 @@
 	responseData = [[NSMutableData data] retain];
 	// @"http://www.kivasti.com/equipment.json.txt"
 	// @"http://localhost/~jlolofie/equipment.json.txt"
-	NSString *url = [[NSString alloc] initWithString:@"http://www.kivasti.com/equipment.json.txt"];
+	NSString *url = [[NSString alloc] initWithString:@"http://www.kivasti.com/e.json.txt"];
 	NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString: url]];
 		
 	[[NSURLConnection alloc] initWithRequest:request delegate:self];

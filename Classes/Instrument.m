@@ -21,10 +21,10 @@
 +(Instrument*) initFromRawData:(NSDictionary*)rawInstrumentData withName:(NSString*)instrName {
 	Instrument *instrument = [[Instrument alloc] init];
 	[instrument setFlowCellID:[rawInstrumentData objectForKey:@"flow_cell"]];
-	[instrument setImagesTaken:[rawInstrumentData objectForKey:@"imaged1"]];
-	[instrument setImagesExpected:[rawInstrumentData objectForKey:@"imaged2"]];
-	[instrument setImagesTransferred:[rawInstrumentData objectForKey:@"tranferred"]];
-	[instrument setEstimatedReadCompletion:[rawInstrumentData objectForKey:@"date"]];
+	[instrument setImagesTaken:[rawInstrumentData objectForKey:@"cycles_done"]];
+	[instrument setImagesExpected:[rawInstrumentData objectForKey:@"cycles_estimated"]];
+	[instrument setImagesTransferred:[rawInstrumentData objectForKey:@"transferred"]];
+	[instrument setEstimatedReadCompletion:[rawInstrumentData objectForKey:@"estimated_completion"]];
 	[instrument setInstrumentName:instrName];
 	
 	return instrument;
