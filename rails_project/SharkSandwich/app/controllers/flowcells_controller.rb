@@ -38,4 +38,23 @@ class FlowcellsController < ApplicationController
 
         render :json => {:flowcell_subscriptions => flowcell_subscriptions}
     end
+
+
+    def notify_flowcell_subscribers
+        flowcell_id = params[:flowcell_id];
+        event = params[:event];
+
+        notificationString = ""
+    
+        fcs = FlowcellSubscription.find(:all, :conditions => {:flowcell_id => flowcell_id}); 
+        if event == "finished"
+            notificationString = "Flowcell #{flowcell_id} has completed"
+        end
+
+        fcs.each do |fc|
+           fc.device.send_notification :alert => notificationString
+        end 
+
+        render :json => {:number_notified => fcs.size}
+    end
 end

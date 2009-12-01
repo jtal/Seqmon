@@ -1,5 +1,6 @@
 ActionController::Routing::Routes.draw do |map|
   map.connect '/devices/register_device.js', :controller=>'devices', :action=>'register_device', :format=>'js'
+  map.connect '/flowcells/notify_flowcell_subscribers/:flowcell_id/:event', :controller=>'flowcells', :action=>'notify_flowcell_subscribers'
 
   # The priority is based upon order of creation: first created -> highest priority.
 
