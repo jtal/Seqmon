@@ -15,6 +15,7 @@
 
 @synthesize instrument;
 
+
 -(id)initWithInstrument:(Instrument *)instr  {
 	[super init];
 	self.instrument = instr;
@@ -34,14 +35,13 @@
 
 -(IBAction)samplesButtonClicked:(id)sender {
 
-	// TODO: use label instead of string
-	UIAlertView *alert =[[UIAlertView alloc] initWithTitle:@"Samples"
-												   message:@"stuff"
-												  delegate:self
-										 cancelButtonTitle:@"Cancel"
-										   otherButtonTitles:@"Ok"];
-	[alert show];
-	[alert release];
+	NSString *sampleStr = [[NSString alloc] initWithString:[[instrument samples] componentsJoinedByString:@"\n"]];
+	NSLog(@"***Samples string: %@",sampleStr);
+	
+	UIAlertView *samplesAlert =[[UIAlertView alloc] initWithTitle:@"Samples" message:sampleStr delegate:self cancelButtonTitle:@"Ok" otherButtonTitles:nil];
+	[samplesAlert show];
+	[samplesAlert autorelease]; 
+	[sampleStr autorelease];
 }
 
 
@@ -63,6 +63,10 @@
 	PushHelper *helper = [PushHelper pushHelper];
 	
 	[flowCellID setText:instrument.flowCellID];
+	[rtaSoftwareVersion setText:[instrument rtaSoftwareVersion]];
+	[instrumentSoftwareVersion setText:[instrument instrumentSoftwareVersion]];
+	[lastStep setText:[instrument lastStep]];
+	[recipe setText:[instrument recipe]];
 	
 	float progress = [instrument.imagesTaken floatValue] / [instrument.imagesExpected floatValue];
 	

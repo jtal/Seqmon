@@ -17,6 +17,12 @@
 	NSNumber *imagesTaken;
 	NSNumber *imagesExpected;
 	NSNumber *imagesTransferred;
+	
+	NSString *recipe;
+	NSString *lastStep;
+	NSString *instrumentSoftwareVersion;
+	NSString *rtaSoftwareVersion;
+	NSArray *samples;
 }
 
 @property (nonatomic, retain) NSString *instrumentName;
@@ -25,6 +31,13 @@
 @property (nonatomic, retain) NSNumber *imagesTaken;
 @property (nonatomic, retain) NSNumber *imagesExpected;
 @property (nonatomic, retain) NSNumber *imagesTransferred;
+
+@property (nonatomic, retain) NSString *instrumentSoftwareVersion;
+@property (nonatomic, retain) NSString *rtaSoftwareVersion;
+@property (nonatomic, retain) NSString *recipe;
+@property (nonatomic, retain) NSString *lastStep;
+@property (nonatomic, retain) NSArray *samples;
+
 
 +(Instrument*)initFromRawData:(NSDictionary*)rawInstrumentData withName:(NSString*)instrName;
 

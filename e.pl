@@ -70,7 +70,7 @@ sub get_equipment_info {
             $machine_summary->{'last_step'} = $last_ps->process_to() || 'unknown';
             $machine_summary->{'ins_software_version'} = $run->instrument_software_version || 'unknown';
             $machine_summary->{'rta_software_version'} = $run->rta_software_version || 'unknown';
-            $machine_summary->{'recipe'} = 'recipe here';
+            $machine_summary->{'recipe'} = 'unknown';
 
             my $dna = $run->get_dna_by_lane();
             my @dna_ary = map { $dna->{$_}->dna_name } sort keys %$dna;
