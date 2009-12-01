@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20091201040650) do
+ActiveRecord::Schema.define(:version => 20091201053658) do
 
   create_table "devices", :force => true do |t|
     t.string   "token"
@@ -20,6 +20,13 @@ ActiveRecord::Schema.define(:version => 20091201040650) do
   create_table "flowcell_subscriptions", :force => true do |t|
     t.string   "flowcell_id"
     t.integer  "device_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "unseen_notifications", :force => true do |t|
+    t.integer  "device_id"
+    t.string   "flowcell_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

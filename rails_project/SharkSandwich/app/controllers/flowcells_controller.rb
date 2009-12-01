@@ -27,6 +27,7 @@ class FlowcellsController < ApplicationController
         dev = Device.find_by_token(params[:id])
 
         flowcell_subscriptions = Array.new()
+        unseen_flowcells = Array.new()
 
         if dev
             fcs = FlowcellSubscription.find(:all, :conditions => {:device_id => dev.id})
@@ -34,9 +35,16 @@ class FlowcellsController < ApplicationController
             fcs.each do |fc|
                 flowcell_subscriptions.push fc.flowcell_id;
             end
-        end
 
-        render :json => {:flowcell_subscriptions => flowcell_subscriptions}
+            usn = dev.unseen_notifications
+            usn.each do |fc|
+                unseen_flowcells.push fc.flowcell_id;
+                fc.destroy
+            end
+
+            render :json => {:flowcell_subscriptions => flowcell_subscriptions, :unseen_notifications => unseen_flowcells.uniq}
+
+        end
     end
 
 
@@ -46,13 +54,16 @@ class FlowcellsController < ApplicationController
 
         notificationString = ""
     
-        fcs = FlowcellSubscription.find(:all, :conditions => {:flowcell_id => flowcell_id}); 
+        fcs = FlowcellSubscription.find(:all, :conditions => {:flowcell_id => flowcell_id})
         if event == "finished"
             notificationString = "Flowcell #{flowcell_id} has completed"
         end
 
         fcs.each do |fc|
-           fc.device.send_notification :alert => notificationString
+           device = fc.device;
+           UnseenNotification.create(:device_id => device.id, :flowcell_id => flowcell_id).save
+           usn = device.unseen_notifications;
+           device.send_notification :alert => notificationString, :badge => usn.size
         end 
 
         render :json => {:number_notified => fcs.size}

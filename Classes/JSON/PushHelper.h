@@ -13,6 +13,7 @@
 @interface PushHelper : NSObject {
 	NSString *token;
 	NSMutableDictionary *subscribedFlowcells;
+	NSMutableDictionary *notifiedFlowcells;
 }
 
 +(PushHelper*)pushHelper;
@@ -21,6 +22,9 @@
 -(NSString*)urlBase;
 -(NSString*)token;
 -(void)setFlowcellSubscriptions:(NSArray*)flowcellList;
+-(void)setFlowcellsNotified:(NSArray*)flowcellList;
 -(BOOL)isSubscribedToFlowcell:(NSString*)flowcellId;
+-(BOOL)isNotifiedAboutFlowcell:(NSString*)flowcellId;
+
 
 @end

@@ -25,6 +25,7 @@ static NSString * URL_BASE = @"http://gcseq-app.gen-comp.com";
 	[super init];
 	token = tempToken;
 	subscribedFlowcells = [[NSMutableDictionary alloc] init];
+	notifiedFlowcells = [[NSMutableDictionary alloc] init];
 	
 	return self;
 }
@@ -78,8 +79,20 @@ static NSString * URL_BASE = @"http://gcseq-app.gen-comp.com";
 	}
 }
 
+-(void)setFlowcellsNotified:(NSArray*)flowcellList {
+	for (NSString* fc in flowcellList) {
+		[notifiedFlowcells setObject:@"yes" forKey:fc];
+	}
+	
+	NSLog(@"nf is %@", notifiedFlowcells);
+}
+
 -(BOOL)isSubscribedToFlowcell:(NSString*)flowcellId {
 	return ([subscribedFlowcells objectForKey:flowcellId] != nil);
+}
+
+-(BOOL)isNotifiedAboutFlowcell:(NSString*)flowcellId {
+	return ([notifiedFlowcells objectForKey:flowcellId] != nil);
 }
 
 #pragma mark ASI Network Delegate

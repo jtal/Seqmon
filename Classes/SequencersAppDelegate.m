@@ -21,6 +21,8 @@
 
 - (void)applicationDidFinishLaunching:(UIApplication *)application {    
     
+	application.applicationIconBadgeNumber = 0;
+	
     // Override point for customization after app launch 
 	[[UIApplication sharedApplication] registerForRemoteNotificationTypes:(UIRemoteNotificationTypeBadge | UIRemoteNotificationTypeAlert)];
 	

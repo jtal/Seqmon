@@ -53,6 +53,9 @@
 	PushHelper *helper = [PushHelper pushHelper];
 	[helper setFlowcellSubscriptions:fcSubs];
 	
+	NSArray *fcNotified = [json objectForKey:@"unseen_notifications"];
+	NSLog(@"USN is %@", fcNotified);
+	[helper setFlowcellsNotified:fcNotified];
 	
 	[self requestEquipmentInfo];
 }
@@ -217,6 +220,15 @@
 
 	[[cell detailTextLabel] setText:detailedText];
 	[detailedText release];
+	
+	PushHelper *helper = [PushHelper pushHelper];
+	if ([helper isNotifiedAboutFlowcell:instrument.flowCellID]) {
+		cell.backgroundColor = [UIColor yellowColor];
+	} else {
+		cell.backgroundColor = [UIColor whiteColor];
+	}
+
+	
 	return cell;
 }
 
