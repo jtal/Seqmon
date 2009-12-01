@@ -3,7 +3,7 @@
 <plist version="1.0">
 <dict>
 	<key>ActivePerspectiveName</key>
-	<string>Project</string>
+	<string>Debug</string>
 	<key>AllowedModules</key>
 	<array>
 		<dict>
@@ -300,13 +300,13 @@
 							<key>PBXSmartGroupTreeModuleOutlineStateSelectionKey</key>
 							<array>
 								<array>
-									<integer>13</integer>
-									<integer>1</integer>
+									<integer>21</integer>
+									<integer>19</integer>
 									<integer>0</integer>
 								</array>
 							</array>
 							<key>PBXSmartGroupTreeModuleOutlineStateVisibleRectKey</key>
-							<string>{{0, 47}, {249, 667}}</string>
+							<string>{{0, 0}, {249, 667}}</string>
 						</dict>
 						<key>PBXTopSmartGroupGIDs</key>
 						<array/>
@@ -322,8 +322,6 @@
 							<string>MainColumn</string>
 							<real>249</real>
 						</array>
-						<key>RubberWindowFrame</key>
-						<string>305 187 1193 726 0 0 1680 1028 </string>
 					</dict>
 					<key>Module</key>
 					<string>PBXSmartGroupTreeModule</string>
@@ -334,14 +332,12 @@
 					<key>Dock</key>
 					<array>
 						<dict>
-							<key>BecomeActive</key>
-							<true/>
 							<key>ContentConfiguration</key>
 							<dict>
 								<key>PBXProjectModuleGUID</key>
 								<string>1D0DE1F610BC361000C9A048</string>
 								<key>PBXProjectModuleLabel</key>
-								<string>SequencerDetailViewController.m</string>
+								<string>SequencersAppDelegate.m</string>
 								<key>PBXSplitModuleInNavigatorKey</key>
 								<dict>
 									<key>Split0</key>
@@ -349,11 +345,11 @@
 										<key>PBXProjectModuleGUID</key>
 										<string>1D0DE1F710BC361000C9A048</string>
 										<key>PBXProjectModuleLabel</key>
-										<string>SequencerDetailViewController.m</string>
+										<string>SequencersAppDelegate.m</string>
 										<key>_historyCapacity</key>
 										<integer>0</integer>
 										<key>bookmark</key>
-										<string>1D186FBD10C5A6CA00D3653F</string>
+										<string>1D18701610C5AE9200D3653F</string>
 										<key>history</key>
 										<array>
 											<string>1D02FE0B10BC7A0300F1C181</string>
@@ -361,13 +357,13 @@
 											<string>1D870F6E10C4D28F005FFA00</string>
 											<string>1D186E9010C58C7100D3653F</string>
 											<string>1D186F7810C5A21000D3653F</string>
-											<string>1D186F7910C5A21000D3653F</string>
 											<string>1D186F7A10C5A21000D3653F</string>
 											<string>1D186F7B10C5A21000D3653F</string>
 											<string>1D186FA510C5A5DF00D3653F</string>
 											<string>1D186FA610C5A5DF00D3653F</string>
 											<string>1D186FB710C5A65400D3653F</string>
-											<string>1D186FBC10C5A6C400D3653F</string>
+											<string>1D18700110C5ABDC00D3653F</string>
+											<string>1D18701010C5AE1300D3653F</string>
 										</array>
 									</dict>
 									<key>SplitCount</key>
@@ -381,18 +377,16 @@
 							<key>GeometryConfiguration</key>
 							<dict>
 								<key>Frame</key>
-								<string>{{0, 0}, {922, 680}}</string>
-								<key>RubberWindowFrame</key>
-								<string>305 187 1193 726 0 0 1680 1028 </string>
+								<string>{{0, 0}, {922, 476}}</string>
 							</dict>
 							<key>Module</key>
 							<string>PBXNavigatorGroup</string>
 							<key>Proportion</key>
-							<string>680pt</string>
+							<string>476pt</string>
 						</dict>
 						<dict>
 							<key>Proportion</key>
-							<string>0pt</string>
+							<string>204pt</string>
 							<key>Tabs</key>
 							<array>
 								<dict>
@@ -407,8 +401,6 @@
 									<dict>
 										<key>Frame</key>
 										<string>{{10, 27}, {922, -27}}</string>
-										<key>RubberWindowFrame</key>
-										<string>305 187 1193 726 0 0 1680 1028 </string>
 									</dict>
 									<key>Module</key>
 									<string>XCDetailModule</string>
@@ -535,6 +527,8 @@
 			<key>Layout</key>
 			<array>
 				<dict>
+					<key>BecomeActive</key>
+					<true/>
 					<key>ContentConfiguration</key>
 					<dict>
 						<key>PBXProjectModuleGUID</key>
@@ -546,6 +540,8 @@
 					<dict>
 						<key>Frame</key>
 						<string>{{0, 0}, {1193, 182}}</string>
+						<key>RubberWindowFrame</key>
+						<string>147 97 1193 726 0 0 1440 878 </string>
 					</dict>
 					<key>Module</key>
 					<string>PBXDebugCLIModule</string>
@@ -620,7 +616,11 @@
 							</array>
 							<key>Frame</key>
 							<string>{{582, 0}, {611, 243}}</string>
+							<key>RubberWindowFrame</key>
+							<string>147 97 1193 726 0 0 1440 878 </string>
 						</dict>
+						<key>RubberWindowFrame</key>
+						<string>147 97 1193 726 0 0 1440 878 </string>
 					</dict>
 					<key>Module</key>
 					<string>PBXDebugSessionModule</string>
@@ -667,7 +667,7 @@
 	<key>StatusbarIsVisible</key>
 	<true/>
 	<key>TimeStamp</key>
-	<real>281388746.76012897</real>
+	<real>281390738.50833499</real>
 	<key>ToolbarConfigUserDefaultsMinorVersion</key>
 	<string>2</string>
 	<key>ToolbarDisplayMode</key>
@@ -689,7 +689,7 @@
 		<string>/Users/jlolofie/src/Sequencers/Sequencers.xcodeproj</string>
 	</array>
 	<key>WindowString</key>
-	<string>305 187 1193 726 0 0 1680 1028 </string>
+	<string>147 97 1193 726 0 0 1440 878 </string>
 	<key>WindowToolsV3</key>
 	<array>
 		<dict>
