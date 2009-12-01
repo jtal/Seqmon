@@ -60,9 +60,9 @@ sub get_equipment_info {
                     flow_cell            => $run->flow_cell_id(),
                     machine_name         => $machine_name,
                     cycles_done          => 0,
-                    cycles_estimated     => 'uknown',
+                    cycles_estimated     => 'unknown',
                     transferred          => 0,
-                    estimated_completion => undef,
+                    estimated_completion => 'unknown',
                 };
             }
 
