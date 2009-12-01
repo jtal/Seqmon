@@ -13,7 +13,9 @@
 
 @implementation PushHelper
 static PushHelper *sharedPushHelper = nil;
-static NSString * URL_BASE = @"http://cheesegrater.local:3000";
+//static NSString * URL_BASE = @"http://cheesegrater.local:3000";
+static NSString * URL_BASE = @"http://gcseq-app.gen-comp.com";
+
 
 #pragma mark Token Registration
 
