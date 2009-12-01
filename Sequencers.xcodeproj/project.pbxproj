@@ -38,6 +38,7 @@
 		B5D1D07810C4995800A6B4C9 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5D1D07710C4995800A6B4C9 /* SystemConfiguration.framework */; };
 		B5D1D07A10C4995F00A6B4C9 /* libz.1.2.3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = B5D1D07910C4995F00A6B4C9 /* libz.1.2.3.dylib */; };
 		B5D1D18F10C4B7FB00A6B4C9 /* PushHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = B5D1D18E10C4B7FB00A6B4C9 /* PushHelper.m */; };
+		B5D1D45910C4ECDD00A6B4C9 /* message.caf in Resources */ = {isa = PBXBuildFile; fileRef = B5D1D45810C4ECDD00A6B4C9 /* message.caf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -96,6 +97,7 @@
 		B5D1D07910C4995F00A6B4C9 /* libz.1.2.3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.1.2.3.dylib; path = usr/lib/libz.1.2.3.dylib; sourceTree = SDKROOT; };
 		B5D1D18D10C4B7FB00A6B4C9 /* PushHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PushHelper.h; path = JSON/PushHelper.h; sourceTree = "<group>"; };
 		B5D1D18E10C4B7FB00A6B4C9 /* PushHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PushHelper.m; path = JSON/PushHelper.m; sourceTree = "<group>"; };
+		B5D1D45810C4ECDD00A6B4C9 /* message.caf */ = {isa = PBXFileReference; lastKnownFileType = file; path = message.caf; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -192,6 +194,7 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				B5D1D45810C4ECDD00A6B4C9 /* message.caf */,
 				A274CB4C10BC469E00D23D0E /* Icon.png */,
 				A2551FA910BAF19B009AC4B4 /* SequencerDetailViewController.xib */,
 				28F335F01007B36200424DE2 /* RootViewController.xib */,
@@ -287,6 +290,7 @@
 				1DB00F2210B84F0C00729632 /* equipment.json.txt in Resources */,
 				A2551FAB10BAF19B009AC4B4 /* SequencerDetailViewController.xib in Resources */,
 				A274CB4D10BC469E00D23D0E /* Icon.png in Resources */,
+				B5D1D45910C4ECDD00A6B4C9 /* message.caf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

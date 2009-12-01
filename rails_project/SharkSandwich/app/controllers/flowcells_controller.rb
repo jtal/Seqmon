@@ -63,7 +63,7 @@ class FlowcellsController < ApplicationController
            device = fc.device;
            UnseenNotification.create(:device_id => device.id, :flowcell_id => flowcell_id).save
            usn = device.unseen_notifications;
-           device.send_notification :alert => notificationString, :badge => usn.size
+           device.send_notification :alert => notificationString, :badge => usn.size, :sound=>'message.caf'
         end 
 
         render :json => {:number_notified => fcs.size}
