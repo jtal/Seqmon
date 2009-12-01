@@ -1,0 +1,9 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  device_id: 1
+  flowcell_id: MyString
+
+two:
+  device_id: 1
+  flowcell_id: MyString
