@@ -7,7 +7,6 @@
 //
 
 #import "Device.h"
-#import "ObjectiveResource.h"
 
 @implementation Device
 

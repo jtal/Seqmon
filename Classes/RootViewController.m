@@ -18,6 +18,15 @@
 @synthesize equipmentTable;
 
 - (void)requestEquipmentInfo {
+	
+	loadingView = [[UIView alloc] initWithFrame:[[self view] bounds]];
+	[loadingView setBackgroundColor:[UIColor blackColor]];
+	[loadingView setAlpha:0.5];
+	UIActivityIndicatorView* indicator = [[UIActivityIndicatorView alloc] initWithActivityIndicatorStyle:UIActivityIndicatorViewStyleWhite];
+	[[self view] addSubview:loadingView];
+	[loadingView addSubview:indicator];
+	[indicator setFrame:CGRectMake ((320/2)-20, (480/2)-20, 40, 40)];
+	[indicator startAnimating];
 
 	responseData = [[NSMutableData data] retain];
 	// @"http://www.kivasti.com/equipment.json.txt"
@@ -43,10 +52,12 @@
 	[self processJSONResponse:responseString];
 	
 	[equipmentTable reloadData];
+	[loadingView removeFromSuperview];
 }
 
 - (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error {
 	NSLog(@"connection failed: %@", error);
+	[loadingView removeFromSuperview];
 }
 
 - (void)connectionDidFinishLoading:(NSURLConnection *)connection {

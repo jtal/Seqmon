@@ -1,5 +1,5 @@
 ActionController::Routing::Routes.draw do |map|
-  map.resources :devices
+  map.connect '/devices/register_device.js', :controller=>'devices', :action=>'register_device', :format=>'js'
 
   # The priority is based upon order of creation: first created -> highest priority.
 

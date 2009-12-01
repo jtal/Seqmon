@@ -14,6 +14,8 @@
 	NSMutableArray *roomList;
 	NSMutableData *responseData;
 	
+	UIView *loadingView;
+	
 	IBOutlet UITableView *equipmentTable;
 }
 

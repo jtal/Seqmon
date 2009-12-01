@@ -51,7 +51,7 @@
 			NSDictionary *rawInstrumentData = [[NSDictionary alloc] init];
 			rawInstrumentData = [rawRoomData objectForKey:instrumentName];
 			
-			NSLog(@"dump of data: %@",rawInstrumentData);
+			//NSLog(@"dump of data: %@",rawInstrumentData);
 			
 			NSNumberFormatter* numForm = [[[NSNumberFormatter alloc] init] autorelease];
 			[numForm setFormatterBehavior:NSNumberFormatterBehavior10_4];
@@ -65,7 +65,7 @@
 		}
 		
 		[room setInstruments:instruments];
-		NSLog(@"parsed room: %@",room);
+		//NSLog(@"parsed room: %@",room);
 		
 		
 		
@@ -73,8 +73,8 @@
 	}
 	
 	
-	NSLog(@"parsed equipment data");
-	NSLog(@"woooo %@", roomList);
+	//NSLog(@"parsed equipment data");
+	//NSLog(@"woooo %@", roomList);
 	return roomList;
 }
 

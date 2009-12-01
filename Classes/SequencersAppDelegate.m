@@ -9,7 +9,6 @@
 #import "SequencersAppDelegate.h"
 #import "RootViewController.h"
 #import "PushHelper.h"
-#import "ObjectiveResourceConfig.h"
 
 
 @implementation SequencersAppDelegate
@@ -24,13 +23,7 @@
 - (void)applicationDidFinishLaunching:(UIApplication *)application {    
     
     // Override point for customization after app launch   
-	
-	
-	NSString *pushServer = [[NSString alloc] initWithString: @"http://gcseq-app.gen-comp.com:80"];
-	[ObjectiveResourceConfig setSite:pushServer];
-	NSLog(@"connecting to push server: %s",pushServer);
-	[pushServer release];
-	
+		
 	[[UIApplication sharedApplication] registerForRemoteNotificationTypes:(UIRemoteNotificationTypeBadge | UIRemoteNotificationTypeAlert)];
 	
 	[window addSubview:[navigationController view]];
@@ -59,10 +52,10 @@
     //const void *devTokenBytes = [devToken bytes];
     //self.registered = YES;
 	
-	PushHelper * helper = [[PushHelper alloc] initWithTokenData:devToken];
-	[helper registerDevice];
+	//PushHelper *helper = [PushHelper allocWithToken:devToken];
+	//[helper registerDevice];
 	
-	//NSLog(@"Our token: %@", devToken);
+	NSLog(@"Our token: %@", devToken);
 }
 
 - (void)application:(UIApplication *)app didFailToRegisterForRemoteNotificationsWithError:(NSError *)err {
