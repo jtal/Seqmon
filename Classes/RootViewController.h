@@ -24,6 +24,8 @@
 -(void)requestEquipmentInfo;
 -(void)processJSONResponse:(NSString *)json;
 -(Instrument *)instrumentForIndexPath:(NSIndexPath*) indexPath;
+-(void)requestNotificationData;
+-(void)gotNotificationData;
 
 @end
 

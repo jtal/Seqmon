@@ -11,13 +11,16 @@
 #import "Instrument.h"
 #import "Room.h"
 #import "SequencerDetailViewController.h"
+#include "PushHelper.h"
+#include "ASIHTTPRequest.h"
 
 
 @implementation RootViewController
 
 @synthesize equipmentTable;
 
-- (void)requestEquipmentInfo {
+- (void)requestNotificationData {
+	
 	
 	loadingView = [[UIView alloc] initWithFrame:[[self view] bounds]];
 	[loadingView setBackgroundColor:[UIColor blackColor]];
@@ -27,13 +30,47 @@
 	[loadingView addSubview:indicator];
 	[indicator setFrame:CGRectMake ((320/2)-20, (480/2)-20, 40, 40)];
 	[indicator startAnimating];
+	
+	PushHelper *helper = [PushHelper pushHelper];
+	NSLog(@"Querying for notification data");
+	
+	
+	NSString *urlStr = [[NSString alloc] initWithFormat:@"%@/flowcells/get_notification_data/%@", [helper urlBase], [helper token]];
+	NSURL *url = [NSURL URLWithString:urlStr];
+	ASIHTTPRequest *request = [ASIHTTPRequest requestWithURL:url];
+		
+	[request setDelegate:self];
+	[request startAsynchronous];
+	
+	//[self requestEquipmentInfo];
+}
 
+-(void)requestFinished:(ASIHTTPRequest*)request {
+	NSString *jsonString = [request responseString];
+	NSDictionary * json = [jsonString JSONValue];
+	
+	NSArray *fcSubs = [json objectForKey:@"flowcell_subscriptions"];
+	PushHelper *helper = [PushHelper pushHelper];
+	[helper setFlowcellSubscriptions:fcSubs];
+	
+	
+	[self requestEquipmentInfo];
+}
+
+
+
+- (void)gotNotificationData {
+	[self requestEquipmentInfo];
+}
+
+- (void)requestEquipmentInfo {
+	
 	responseData = [[NSMutableData data] retain];
 	// @"http://www.kivasti.com/equipment.json.txt"
 	// @"http://localhost/~jlolofie/equipment.json.txt"
 	// @"http://www.kivasti.com/e.json.txt"
 	// @"http://gcseq-app.gen-comp.com/seq.txt"
-	NSString *url = [[NSString alloc] initWithString:@"http://www.kivasti.com/e.json.txt"];
+	NSString *url = [[NSString alloc] initWithString:@"http://www.kivasti.com/equipment.json.txt"];
 	NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString: url]];
 		
 	[[NSURLConnection alloc] initWithRequest:request delegate:self];
@@ -55,6 +92,7 @@
 	
 	[equipmentTable reloadData];
 	[loadingView removeFromSuperview];
+	NSLog(@"done...");
 }
 
 - (void)connection:(NSURLConnection *)connection didFailWithError:(NSError *)error {
@@ -87,7 +125,7 @@
 	[self setTitle:@"Sequencers"];
 	
 	rooms = [[NSMutableDictionary alloc] init];
-	[self requestEquipmentInfo];
+	[self requestNotificationData];
 	
     // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;

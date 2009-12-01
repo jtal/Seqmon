@@ -8,14 +8,19 @@
 
 #import <Foundation/Foundation.h>
 
+@class RootViewController;
 
 @interface PushHelper : NSObject {
 	NSString *token;
+	NSMutableDictionary *subscribedFlowcells;
 }
 
 +(PushHelper*)pushHelper;
 -(void)setToken:(NSData*)tok;
 -(void)registerDevice;
--(void)registerForFlowcellNotifications:(NSString*)flowcellName withStatus:(NSString*)notificationStatus;
+-(NSString*)urlBase;
+-(NSString*)token;
+-(void)setFlowcellSubscriptions:(NSArray*)flowcellList;
+-(BOOL)isSubscribedToFlowcell:(NSString*)flowcellId;
 
 @end

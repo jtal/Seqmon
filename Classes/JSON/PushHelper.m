@@ -9,6 +9,7 @@
 #import "PushHelper.h"
 #import "ASIFormDataRequest.h";
 #import "ASINetworkQueue.h";
+#import "RootViewController.h"
 
 @implementation PushHelper
 static PushHelper *sharedPushHelper = nil;
@@ -21,6 +22,7 @@ static NSString * URL_BASE = @"http://cheesegrater.local:3000";
 	NSString * tempToken = @"262f8925b0ed878c39c0886cb30ec32a504a21179245882447ff3a585dfda4ca";
 	[super init];
 	token = tempToken;
+	subscribedFlowcells = [[NSMutableDictionary alloc] init];
 	
 	return self;
 }
@@ -38,6 +40,10 @@ static NSString * URL_BASE = @"http://cheesegrater.local:3000";
 	return token;
 }
 
+-(NSString*)urlBase {
+	return URL_BASE;
+}
+
 -(void)registerDevice {
 	NSLog(@"Going to register...");
 	
@@ -53,22 +59,44 @@ static NSString * URL_BASE = @"http://cheesegrater.local:3000";
 -(void)registerForFlowcellNotifications:(NSString*)flowcellName withStatus:(NSString*)notificationStatus {
 	NSLog(@"Registering flowcell %@ with status %@ and token %@", flowcellName, notificationStatus, token);
 
-	NSString *urlStr = [[NSString alloc] initWithFormat:@"%@/flowcells/register_flowcell_notify", URL_BASE];
+	NSString *urlStr = [[NSString alloc] initWithFormat:@"%@/flowcells/register_flowcell_notify/%@", URL_BASE, flowcellName];
 	NSLog(@"URL IS %@", urlStr);
 	NSURL *url = [NSURL URLWithString:urlStr];
 	ASIFormDataRequest *request = [ASIFormDataRequest requestWithURL:url];
 	
 	[request setPostValue:token forKey:@"token"];
-	[request setPostValue:flowcellName forKey:@"flowcell"];
 	[request setPostValue:notificationStatus forKey:@"status"];
 	[request setDelegate:self];
 	[request startAsynchronous];
 }	
 
+-(void)setFlowcellSubscriptions:(NSArray*)flowcellList {
+	for (NSString* fc in flowcellList) {
+		[subscribedFlowcells setObject:@"yes" forKey:fc];
+	}
+}
+
+-(BOOL)isSubscribedToFlowcell:(NSString*)flowcellId {
+	return ([subscribedFlowcells objectForKey:flowcellId] != nil);
+}
 
 #pragma mark ASI Network Delegate
 -(void)requestFinished:(ASIHTTPRequest *)request{
 	NSLog(@"Success!");
+	
+	NSDictionary *info = [request userInfo];
+	NSString *k = [info objectForKey:@"purpose"];
+	if (k == nil)
+		return;
+	
+	if ([k isEqualToString:@"notification_fetch"]) {
+		
+		RootViewController* delegate = [info objectForKey:@"delegate"];
+		
+		[delegate requestEquipmentInfo];
+	}
+		
+	
 }
 
 -(void)requestFailed:(ASIHTTPRequest *)request{

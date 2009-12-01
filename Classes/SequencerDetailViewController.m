@@ -60,6 +60,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
 	
+	PushHelper *helper = [PushHelper pushHelper];
+	
 	[flowCellID setText:instrument.flowCellID];
 	
 	float progress = [instrument.imagesTaken floatValue] / [instrument.imagesExpected floatValue];
@@ -68,6 +70,8 @@
 		
 	[cycleProgress setText:progressText];
 	[cycleProgressBar setProgress:progress];
+	
+	[notificationSwitch setOn:[helper isSubscribedToFlowcell:instrument.flowCellID]];
 	
 	[expectedCompletionDate setText:[[instrument estimatedReadCompletion] description]];
 }
