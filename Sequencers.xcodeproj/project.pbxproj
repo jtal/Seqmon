@@ -37,6 +37,7 @@
 		B5D1D07610C4995200A6B4C9 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5D1D07510C4995200A6B4C9 /* CFNetwork.framework */; };
 		B5D1D07810C4995800A6B4C9 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5D1D07710C4995800A6B4C9 /* SystemConfiguration.framework */; };
 		B5D1D07A10C4995F00A6B4C9 /* libz.1.2.3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = B5D1D07910C4995F00A6B4C9 /* libz.1.2.3.dylib */; };
+		B5D1D18F10C4B7FB00A6B4C9 /* PushHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = B5D1D18E10C4B7FB00A6B4C9 /* PushHelper.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -93,6 +94,8 @@
 		B5D1D07510C4995200A6B4C9 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		B5D1D07710C4995800A6B4C9 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		B5D1D07910C4995F00A6B4C9 /* libz.1.2.3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.1.2.3.dylib; path = usr/lib/libz.1.2.3.dylib; sourceTree = SDKROOT; };
+		B5D1D18D10C4B7FB00A6B4C9 /* PushHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PushHelper.h; path = JSON/PushHelper.h; sourceTree = "<group>"; };
+		B5D1D18E10C4B7FB00A6B4C9 /* PushHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PushHelper.m; path = JSON/PushHelper.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,6 +130,8 @@
 				1DB00F3610B8805600729632 /* Instrument.m */,
 				A2551FA710BAF19B009AC4B4 /* SequencerDetailViewController.h */,
 				A2551FA810BAF19B009AC4B4 /* SequencerDetailViewController.m */,
+				B5D1D18D10C4B7FB00A6B4C9 /* PushHelper.h */,
+				B5D1D18E10C4B7FB00A6B4C9 /* PushHelper.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -311,6 +316,7 @@
 				B5D1D06E10C4992700A6B4C9 /* ASIFormDataRequest.m in Sources */,
 				B5D1D06F10C4992700A6B4C9 /* ASIAuthenticationDialog.m in Sources */,
 				B5D1D07210C4993800A6B4C9 /* Reachability.m in Sources */,
+				B5D1D18F10C4B7FB00A6B4C9 /* PushHelper.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

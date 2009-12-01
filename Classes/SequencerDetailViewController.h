@@ -16,6 +16,7 @@
 	IBOutlet UIProgressView *cycleProgressBar;
 	IBOutlet UILabel *expectedCompletionDate;
 	IBOutlet UILabel *flowCellID;
+	IBOutlet UISwitch *notificationSwitch;
 	
 	Instrument *instrument;
 }

@@ -7,6 +7,7 @@
 //
 
 #import "SequencerDetailViewController.h"
+#import "PushHelper.h"
 
 
 @implementation SequencerDetailViewController
@@ -21,9 +22,14 @@
 }
 
 -(IBAction)triggerMessage:(id) sender {
-	UIAlertView *someError = [[UIAlertView alloc] initWithTitle: @"Foo" message: @"Fooo" delegate: self cancelButtonTitle: @"Ok" otherButtonTitles: nil];
-	[someError show];
-	[someError release];	
+	
+	PushHelper * helper = [PushHelper pushHelper];
+	
+	NSString *status = ([notificationSwitch isOn] ? @"on" : @"off");
+	
+	[helper registerForFlowcellNotifications:instrument.flowCellID withStatus:status];
+
+	[status release];
 }
 
 -(IBAction)samplesButtonClicked:(id)sender {

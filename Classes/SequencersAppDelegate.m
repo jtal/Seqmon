@@ -10,7 +10,6 @@
 #import "RootViewController.h"
 #import "PushHelper.h"
 
-
 @implementation SequencersAppDelegate
 
 @synthesize window;
@@ -22,8 +21,7 @@
 
 - (void)applicationDidFinishLaunching:(UIApplication *)application {    
     
-    // Override point for customization after app launch   
-		
+    // Override point for customization after app launch 
 	[[UIApplication sharedApplication] registerForRemoteNotificationTypes:(UIRemoteNotificationTypeBadge | UIRemoteNotificationTypeAlert)];
 	
 	[window addSubview:[navigationController view]];
@@ -52,10 +50,10 @@
     //const void *devTokenBytes = [devToken bytes];
     //self.registered = YES;
 	
-	//PushHelper *helper = [PushHelper allocWithToken:devToken];
-	//[helper registerDevice];
+	PushHelper *helper = [PushHelper pushHelper];
+	[helper setToken:devToken];
+	[helper registerDevice];
 	
-	NSLog(@"Our token: %@", devToken);
 }
 
 - (void)application:(UIApplication *)app didFailToRegisterForRemoteNotificationsWithError:(NSError *)err {
