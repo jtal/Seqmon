@@ -18,6 +18,11 @@
 	IBOutlet UILabel *flowCellID;
 	IBOutlet UISwitch *notificationSwitch;
 	
+	IBOutlet UILabel *instrumentSoftwareVersion;
+	IBOutlet UILabel *rtaSoftwareVersion;
+	IBOutlet UILabel *recipe;
+	IBOutlet UILabel *lastStep;
+	
 	Instrument *instrument;
 }
 

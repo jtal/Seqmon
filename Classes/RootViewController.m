@@ -73,7 +73,7 @@
 	// @"http://localhost/~jlolofie/equipment.json.txt"
 	// @"http://www.kivasti.com/e.json.txt"
 	// @"http://gcseq-app.gen-comp.com/seq.txt"
-	NSString *url = [[NSString alloc] initWithString:@"http://www.kivasti.com/equipment.json.txt"];
+	NSString *url = [[NSString alloc] initWithString:@"http://www.kivasti.com/e.json.txt"];
 	NSURLRequest *request = [NSURLRequest requestWithURL:[NSURL URLWithString: url]];
 		
 	[[NSURLConnection alloc] initWithRequest:request delegate:self];

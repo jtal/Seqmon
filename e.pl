@@ -37,19 +37,13 @@ sub get_equipment_info {
 
         for my $machine (@$machines) {
 
-            my $run        = $machine->get_last_solexa_run();
-            my $last_event = $run->get_last_event();
-
-            my $machine_name = $machine->serial_number();
-            $machine_name =~ s/HW(.+)-//;
-
-            my $stats      = $model->get_seq_stats( $run->er_id );
             my $machine_summary = {};
+
+            my $run        = $machine->get_last_solexa_run();
+            my $stats      = $model->get_seq_stats( $run->er_id );
 
             if ($stats) {
                 $machine_summary = {
-                    flow_cell            => $run->flow_cell_id(),
-                    machine_name         => $machine_name,
                     cycles_done          => $stats->{'last_instrument_cycle'},
                     cycles_estimated     => $stats->{'total_cycles'},
                     transferred          => $stats->{'last_transfer_cycle'},
@@ -57,8 +51,6 @@ sub get_equipment_info {
                 };
             } else {
                 $machine_summary = {
-                    flow_cell            => $run->flow_cell_id(),
-                    machine_name         => $machine_name,
                     cycles_done          => 0,
                     cycles_estimated     => 'unknown',
                     transferred          => 0,
@@ -66,6 +58,27 @@ sub get_equipment_info {
                 };
             }
 
+            $machine_summary->{'flow_cell'} = $run->flow_cell_id();
+
+            my $machine_name = $machine->serial_number();
+            $machine_name =~ s/HW(.+)-//;
+            $machine_summary->{'machine_name'} = $machine_name;
+
+            my $last_event = $run->get_last_event();
+            my $last_ps    = $last_event->get_process_step();
+
+            $machine_summary->{'last_step'} = $last_ps->process_to() || 'unknown';
+            $machine_summary->{'ins_software_version'} = $run->instrument_software_version || 'unknown';
+            $machine_summary->{'rta_software_version'} = $run->rta_software_version || 'unknown';
+            $machine_summary->{'recipe'} = sprintf( "(%s) %s",
+                $run->run_type_short || 'unknown',
+                $run->recipe_name    || 'unknown' );
+
+            my $dna = $run->get_dna_by_lane();
+            my @dna_ary = map { $dna->{$_}->dna_name } sort keys %$dna;
+            $machine_summary->{'samples'} = \@dna_ary;
+
+            # add to the record
             $machine_summaries->{$machine_name} = $machine_summary;
         }
 
