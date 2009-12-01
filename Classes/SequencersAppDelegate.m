@@ -26,8 +26,7 @@
     // Override point for customization after app launch 
 	[[UIApplication sharedApplication] registerForRemoteNotificationTypes:(UIRemoteNotificationTypeBadge | UIRemoteNotificationTypeAlert | UIRemoteNotificationTypeSound)];
 	
-	[window addSubview:[navigationController view]];
-    [window makeKeyAndVisible];
+	
 }
 
 
@@ -56,10 +55,16 @@
 	[helper setToken:devToken];
 	[helper registerDevice];
 	
+	[window addSubview:[navigationController view]];
+    [window makeKeyAndVisible];
+	
 }
 
 - (void)application:(UIApplication *)app didFailToRegisterForRemoteNotificationsWithError:(NSError *)err {
     NSLog(@"Error in registration. Error: %@", err);
+	
+	[window addSubview:[navigationController view]];
+    [window makeKeyAndVisible];
 }
 
 @end
