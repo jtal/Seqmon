@@ -24,6 +24,7 @@
 		28AD73600D9D9599002E5188 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28AD735F0D9D9599002E5188 /* MainWindow.xib */; };
 		28C286E10D94DF7D0034E888 /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28C286E00D94DF7D0034E888 /* RootViewController.m */; };
 		28F335F11007B36200424DE2 /* RootViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28F335F01007B36200424DE2 /* RootViewController.xib */; };
+		A2031F4010C6B5CD0069EA72 /* dist.plist in Resources */ = {isa = PBXBuildFile; fileRef = A2031F3F10C6B5CD0069EA72 /* dist.plist */; };
 		A2551FAA10BAF19B009AC4B4 /* SequencerDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A2551FA810BAF19B009AC4B4 /* SequencerDetailViewController.m */; };
 		A2551FAB10BAF19B009AC4B4 /* SequencerDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = A2551FA910BAF19B009AC4B4 /* SequencerDetailViewController.xib */; };
 		A274CB4D10BC469E00D23D0E /* Icon.png in Resources */ = {isa = PBXBuildFile; fileRef = A274CB4C10BC469E00D23D0E /* Icon.png */; };
@@ -72,6 +73,7 @@
 		28F335F01007B36200424DE2 /* RootViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RootViewController.xib; sourceTree = "<group>"; };
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* Sequencers-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "Sequencers-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
+		A2031F3F10C6B5CD0069EA72 /* dist.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = dist.plist; sourceTree = "<group>"; };
 		A2551FA710BAF19B009AC4B4 /* SequencerDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SequencerDetailViewController.h; sourceTree = "<group>"; };
 		A2551FA810BAF19B009AC4B4 /* SequencerDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SequencerDetailViewController.m; sourceTree = "<group>"; };
 		A2551FA910BAF19B009AC4B4 /* SequencerDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = SequencerDetailViewController.xib; path = Classes/SequencerDetailViewController.xib; sourceTree = "<group>"; };
@@ -176,6 +178,7 @@
 				B5D1D07510C4995200A6B4C9 /* CFNetwork.framework */,
 				B5D1D07710C4995800A6B4C9 /* SystemConfiguration.framework */,
 				B5D1D07910C4995F00A6B4C9 /* libz.1.2.3.dylib */,
+				A2031F3F10C6B5CD0069EA72 /* dist.plist */,
 			);
 			name = CustomTemplate;
 			sourceTree = "<group>";
@@ -287,6 +290,7 @@
 				1DB00F2210B84F0C00729632 /* equipment.json.txt in Resources */,
 				A2551FAB10BAF19B009AC4B4 /* SequencerDetailViewController.xib in Resources */,
 				A274CB4D10BC469E00D23D0E /* Icon.png in Resources */,
+				A2031F4010C6B5CD0069EA72 /* dist.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -349,6 +353,33 @@
 			};
 			name = Release;
 		};
+		A2031F4110C6B5FC0069EA72 /* Ad-Hoc Distribution */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CODE_SIGN_ENTITLEMENTS = dist.plist;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Ben Oberkfell";
+				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				PREBINDING = NO;
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "F1088E21-CEC1-4586-8AAB-BBE4D76086C2";
+				SDKROOT = iphoneos3.0;
+			};
+			name = "Ad-Hoc Distribution";
+		};
+		A2031F4210C6B5FC0069EA72 /* Ad-Hoc Distribution */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = YES;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = Sequencers_Prefix.pch;
+				INFOPLIST_FILE = "Sequencers-Info.plist";
+				PRODUCT_NAME = Sequencers;
+			};
+			name = "Ad-Hoc Distribution";
+		};
 		C01FCF4F08A954540054247B /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -384,6 +415,7 @@
 			buildConfigurations = (
 				1D6058940D05DD3E006BFB54 /* Debug */,
 				1D6058950D05DD3E006BFB54 /* Release */,
+				A2031F4210C6B5FC0069EA72 /* Ad-Hoc Distribution */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -393,6 +425,7 @@
 			buildConfigurations = (
 				C01FCF4F08A954540054247B /* Debug */,
 				C01FCF5008A954540054247B /* Release */,
+				A2031F4110C6B5FC0069EA72 /* Ad-Hoc Distribution */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
